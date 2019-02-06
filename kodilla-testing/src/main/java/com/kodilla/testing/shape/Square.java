@@ -1,9 +1,10 @@
 package com.kodilla.testing.shape;
 
+import java.util.Objects;
+
 public class Square implements Shape {
 
     private double a;
-    private double result;
 
     public Square(double a) {
         this.a = a;
@@ -16,7 +17,19 @@ public class Square implements Shape {
 
     @Override
     public double getField() {
-        result = a * a;
-        return result;
+        return a * a;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Square square = (Square) o;
+        return Double.compare(square.a, a) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(a);
     }
 }

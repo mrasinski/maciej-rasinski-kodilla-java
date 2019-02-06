@@ -18,9 +18,8 @@ public class ShapeCollector {
         shapeList.remove(shape);
     }
 
-    public String getFigure(int n) {
-        String result = shapeList.get(n).getShapeName();
-        return result;
+    public Shape getFigure(int n) {
+        return shapeList.get(n);
     }
 
     public void showFigures() {

@@ -52,8 +52,8 @@ public class ShapeCollectorTestSuite {
         ShapeCollector sC = new ShapeCollector();
         sC.addFigure(shape);
         //When
-        String result = sC.getFigure(0);
+        Shape result = sC.getFigure(0);
         //Then
-        Assert.assertEquals(shape.getShapeName(), result);
+        Assert.assertEquals(shape, result);
     }
 }
