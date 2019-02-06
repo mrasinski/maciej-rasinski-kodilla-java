@@ -15,8 +15,8 @@ public class TestingMain {
             System.out.println("Wrong result");
         }
 
-        System.out.println("Test - substract");
-        if(calc.substract(2,3) == 5) {
+        System.out.println("Test - subtract");
+        if(calc.subtract(7,2) == 5) {
             System.out.println("Test OK");
         } else {
             System.out.println("Wrong result");
