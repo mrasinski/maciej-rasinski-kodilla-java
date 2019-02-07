@@ -21,7 +21,7 @@ public class ForumStatisticsTestSuite {
         System.out.println("End test");
     }
 
-    @Test(expected = AssertionError.class)
+    @Test
     public void testCalculateAdvStatisticsZeroPosts() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
@@ -36,9 +36,9 @@ public class ForumStatisticsTestSuite {
         //When
         forumStatistics.calculateAdvStatistics(statisticsMock);
         //Then
-        Assert.assertEquals(0, forumStatistics.getAvgPostPerUser(), 0.1);
-        Assert.assertEquals(0, forumStatistics.getAvgCommtPerPost(), 0.1);
-        Assert.assertEquals(5, forumStatistics.getAvgCommtPerUser(), 0.1);
+            Assert.assertEquals(0, forumStatistics.getAvgPostPerUser(), 0.1);
+            Assert.assertEquals(Double.POSITIVE_INFINITY, forumStatistics.getAvgCommtPerPost(), 0.1);
+            Assert.assertEquals(5, forumStatistics.getAvgCommtPerUser(), 0.1);
     }
 
     @Test
@@ -121,7 +121,7 @@ public class ForumStatisticsTestSuite {
         Assert.assertEquals(25, forumStatistics.getAvgCommtPerUser(), 0.1);
     }
 
-    @Test(expected = AssertionError.class)
+    @Test
     public void testCalculateAdvStatisticsZeroUsers() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
@@ -133,9 +133,9 @@ public class ForumStatisticsTestSuite {
         //When
         forumStatistics.calculateAdvStatistics(statisticsMock);
         //Then
-        Assert.assertEquals(0, forumStatistics.getAvgPostPerUser(), 0.1);
+        Assert.assertEquals(Double.POSITIVE_INFINITY, forumStatistics.getAvgPostPerUser(), 0.1);
         Assert.assertEquals(2, forumStatistics.getAvgCommtPerPost(), 0.1);
-        Assert.assertEquals(0, forumStatistics.getAvgCommtPerUser(), 0.1);
+        Assert.assertEquals(Double.POSITIVE_INFINITY, forumStatistics.getAvgCommtPerUser(), 0.1);
     }
 
     @Test
