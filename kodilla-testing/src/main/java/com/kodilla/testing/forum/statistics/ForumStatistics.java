@@ -39,9 +39,19 @@ public class ForumStatistics implements Statistics {
     }
 
     public void calculateAdvStatistics(Statistics statistics) {
-        avgPostPerUser = (double) statistics.postsCount() / statistics.usersNames().size();
-        avgCommtPerUser = (double) statistics.commentsCount() / statistics.usersNames().size();
-        avgCommtPerPost = (double) statistics.commentsCount() / statistics.postsCount();
+        if(statistics.usersNames().size() == 0) {
+            avgPostPerUser = 0;
+            avgCommtPerUser = 0;
+            avgCommtPerPost = (double) statistics.commentsCount() / statistics.postsCount();
+        } else if (statistics.postsCount() == 0){
+            avgPostPerUser = (double) statistics.postsCount() / statistics.usersNames().size();
+            avgCommtPerUser = (double) statistics.commentsCount() / statistics.usersNames().size();
+            avgCommtPerPost = 0;
+        } else {
+            avgPostPerUser = (double) statistics.postsCount() / statistics.usersNames().size();
+            avgCommtPerUser = (double) statistics.commentsCount() / statistics.usersNames().size();
+            avgCommtPerPost = (double) statistics.commentsCount() / statistics.postsCount();
+        }
     }
 
     public String showStatistics() {
