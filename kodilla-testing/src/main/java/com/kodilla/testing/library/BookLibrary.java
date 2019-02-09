@@ -20,14 +20,6 @@ public class BookLibrary {
         return bookList;
     }
 
-    boolean rentABook(LibraryUser libraryUser, Book book) {
-        if(libraryDatabase.rentABook(libraryUser, book)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
         List<Book> resultList = libraryDatabase
                 .listBooksInHandsOf(libraryUser);
