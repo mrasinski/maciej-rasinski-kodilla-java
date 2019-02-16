@@ -2,12 +2,11 @@ package com.kodilla.stream.portfolio;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.time.Duration;
 import java.time.LocalDate;
-import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.stream.IntStream;
+import java.time.Period;
+import java.util.*;
 
 import static java.time.temporal.ChronoUnit.DAYS;
 import static java.util.stream.Collectors.toList;
@@ -141,7 +140,7 @@ public class BoardTestSuite {
         Assert.assertEquals(2, longTasks);
     }
 
-    /*@Test
+    @Test
     public void testAddTaskListAverageWorkingOnTask() {
         //Given
         Board board = prepareTestData();
@@ -149,14 +148,13 @@ public class BoardTestSuite {
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
-        int stream = board.getTaskLists().stream()
+        double stream = board.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(taskList -> taskList.getTasks().stream())
-                .map(task -> DAYS.between(task.getCreated(), LocalDate.now()));
-        double averageWorkOnTask =
-                IntStream.of(stream)
-                .average();
-
+                .map(t -> Period.between(t.getCreated(), LocalDate.now()).getDays())
+                .mapToDouble(n -> n)
+                .average().getAsDouble();
         //Then
-    }*/
+        Assert.assertEquals(10, stream, 0.1);
+    }
 }
