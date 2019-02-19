@@ -3,12 +3,10 @@ package com.kodilla.stream.portfolio;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.Period;
 import java.util.*;
 
-import static java.time.temporal.ChronoUnit.DAYS;
 import static java.util.stream.Collectors.toList;
 
 
