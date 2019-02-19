@@ -1,6 +1,8 @@
 package com.kodilla.exception.test;
 
-public class ExceptionHandling extends Exception {
+import com.kodilla.exception.test.SecondChallenge.MyException;
+
+public class ExceptionHandling {
 
     public static void main(String[] args) {
 
@@ -11,9 +13,9 @@ public class ExceptionHandling extends Exception {
             String result = secondChallenge.probablyIWillThrowException(2, 1);
             System.out.println(result);
 
-        } catch (Exception e) {
+        } catch (MyException e) {
 
-            System.out.println("Exception was thown!");
+            System.out.println(e.getMessage());
 
         } finally {
 
