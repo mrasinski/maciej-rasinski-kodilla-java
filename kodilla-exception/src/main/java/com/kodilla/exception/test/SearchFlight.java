@@ -20,7 +20,7 @@ public class SearchFlight {
         if(airportMap.containsKey(flight.getArrivalAirport()) && airportMap.get(flight.getArrivalAirport())) {
             return true;
         } else {
-            throw new RouteNotFoundException(flight);
+            throw new RouteNotFoundException("Take your bags you're going to " + flight.getArrivalAirport());
         }
     }
 
