@@ -17,7 +17,7 @@ public class SearchFlight {
 
     public boolean findFilght(Flight flight) throws RouteNotFoundException {
 
-        if(airportMap.containsKey(flight.getArrivalAirport()) && airportMap.get(flight.getArrivalAirport())) {
+        if(Boolean.TRUE.equals(airportMap.get(flight.getArrivalAirport()))) {
             return true;
         } else {
             throw new RouteNotFoundException("Take your bags you're going to " + flight.getArrivalAirport());
