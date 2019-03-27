@@ -32,7 +32,7 @@ public class MovieStore {
         Map<String, List<String>> result = getMovies();
 
         String resultOfMap = result.entrySet().stream()
-                .map(e -> e.getKey() + e.getValue())
+                .flatMap(book -> book.getValue().stream())
                 .collect(Collectors.joining("!"));
 
         System.out.println(resultOfMap);
