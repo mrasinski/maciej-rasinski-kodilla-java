@@ -31,11 +31,12 @@ public class ProductOrderService {
         OrderRequestRetriever orderRequestRetriever = new OrderRequestRetriever();
         OrderRequest orderRequest = orderRequestRetriever.retrieve();
 
-        ProductOrderService productOrderService = new ProductOrderService(user -> System.out.println(user.getFirstName() +
-                " " + user.getLastName()), (user, orderTime) -> {
-            System.out.println(user.getFirstName() + " " + user.getLastName() + ", " + orderTime);
-            return true;
-        },
+        ProductOrderService productOrderService = new ProductOrderService(
+                user -> System.out.println(user.getFirstName() + " " + user.getLastName()),
+                (user, orderTime) -> {
+                    System.out.println(user.getFirstName() + " " + user.getLastName() + ", " + orderTime);
+                    return true;
+                    },
                 (user, orderTime) -> System.out.println(user.getFirstName() + " " + user.getLastName() +
                         ", " + orderTime));
 
