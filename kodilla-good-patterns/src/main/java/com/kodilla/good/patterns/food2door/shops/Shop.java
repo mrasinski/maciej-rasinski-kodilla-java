@@ -1,8 +1,9 @@
 package com.kodilla.good.patterns.food2door.shops;
 
+import com.kodilla.good.patterns.food2door.OrderService;
 import com.kodilla.good.patterns.food2door.Product;
 
-public class Shop {
+public class Shop implements OrderService {
 
     private String shopName;
     private Product product;
@@ -18,5 +19,10 @@ public class Shop {
 
     public Product getProduct() {
         return product;
+    }
+
+    @Override
+    public boolean process() {
+        return true;
     }
 }
