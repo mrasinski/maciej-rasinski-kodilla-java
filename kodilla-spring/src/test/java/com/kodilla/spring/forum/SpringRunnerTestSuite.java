@@ -14,14 +14,9 @@ public class SpringRunnerTestSuite {
 
     @Test
     public void testGetUsername(){
-
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext("com.kodilla.spring");
-
         ForumUser forumUser = applicationContext.getBean(ForumUser.class);
-
         String name = forumUser.getUserName();
-
         Assert.assertEquals("John Smith", name);
-
     }
 }
