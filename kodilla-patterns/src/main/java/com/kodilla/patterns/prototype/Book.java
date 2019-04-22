@@ -1,4 +1,4 @@
-package com.kodilla.patterns.prototype.library;
+package com.kodilla.patterns.prototype;
 
 import java.time.LocalDate;
 
