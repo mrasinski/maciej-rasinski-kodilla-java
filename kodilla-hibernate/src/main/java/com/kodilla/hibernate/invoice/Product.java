@@ -21,20 +21,20 @@ public class Product {
     @Id
     @GeneratedValue
     @NotNull
-    @Column(name = "PRODUCT_ID", unique = true)
+    @Column(name = "ID", unique = true)
     public int getId() {
         return id;
     }
 
     @NotNull
-    @Column(name = "INVOICE_NAME")
+    @Column(name = "PRODUCT_NAME")
     public String getName() {
         return name;
     }
 
     @OneToMany(
             targetEntity = Item.class,
-            mappedBy = "items",
+            mappedBy = "product",
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )

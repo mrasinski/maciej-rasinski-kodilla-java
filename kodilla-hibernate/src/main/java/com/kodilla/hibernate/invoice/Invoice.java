@@ -4,6 +4,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.*;
 
+@Entity
+@Table(name = "INVOICE")
 public class Invoice {
     private int id;
     private String number;
@@ -32,7 +34,7 @@ public class Invoice {
 
     @OneToMany(
             targetEntity = Item.class,
-            mappedBy = "items",
+            mappedBy = "invoice",
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
