@@ -19,6 +19,7 @@ public class MedianAdapterTestSuite {
         Book book4 = new Book("Author4", "Title4", 2004, "8489646486");
         Book book5 = new Book("Author5", "Title5", 2019, "8489646486");
         Book book6 = new Book("Author6", "Title6", 2008, "8489646486");
+        Book book7 = new Book("Author7", "Title7", 2003, "8489646486");
         Set<Book> books = new HashSet<>();
         books.add(book1);
         books.add(book2);
@@ -26,11 +27,12 @@ public class MedianAdapterTestSuite {
         books.add(book4);
         books.add(book5);
         books.add(book6);
+        books.add(book7);
         MedianAdapter medianAdapter = new MedianAdapter();
         //When
         int median = medianAdapter.publicationYearMedian(books);
         //Then
         System.out.println(median);
-        assertEquals(median, 2002, 0);
+        assertEquals(median, 2003, 0);
     }
 }
